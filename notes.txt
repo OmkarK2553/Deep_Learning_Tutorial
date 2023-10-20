@@ -33,8 +33,8 @@ PyTorch v/s Tensorflow v/s Keras
 
 e.g. 
 
-Input Layer      Hidden Layer        Output Layer                   => Here every neuron will be connected with every neuron in the
-                                                                       hidden layer
+Input Layer      Hidden Layer        Output Layer                   => Here if every neuron will be connected with every neuron in the
+                                                                       hidden layer ==> dense layer
 1) Age  -------> Awareness
 2) Education -->
                                         Yes/No
