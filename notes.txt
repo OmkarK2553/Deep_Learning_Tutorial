@@ -1,0 +1,52 @@
+What is a Neuron?
+--> A neuron is a combination if linear and logistic regression i.e. its first part is a linear eqn (weighted sum) and its second part is a sigmoid function which is also called as an activation function
+--> Here the logic is that, we have an input and linear eqn will give a continuous value and that continuous value is converted to 0/1 using activation or sigmoid function
+--> If the value is 1, we say that the neuron is activated else we say that it is deactivated
+
+
+What is a Neural Network?
+--> Each neuron is given a specific subtaskof the whole task (e.g. if we need to identify if the given image is of a koala or not, each neoron will work on a specific part of the koala's body such as ears, nose, eyes, legs, etc) and these parts will gave their own weightage in the identification
+--> These neurons form groups. A group tells its results to the next group and so on
+--> there might be 3 groups at level 1, 2 groups at level 2 and then 1 group at level 3
+--> Intermediate groups are known as the hidden layer
+--> Structure =         Input Layer ==>  Hidden Layer ==>  Output Layer
+
+
+Training of a Neural Network:
+--> Initially, one image of koala will be shown to all the neurons and they will make a random guess whether that subpart looks like a koala's or not and based on that an output will be generated
+--> That output will be handed over to a supervisor who knows the correct answer and that correct answer will again be handed over to output layer
+--> The correct answer then flows from output layer to hidden layer and then to the neurons and these neurons adjust their weights accordingly
+--> These neurons learn from their mistakes if they predicted it wrong and this process is called Backward Error Propagation
+--> This process is repeated n number of times (again they make a random guess but this time considering the past mistakes)
+--> Initially, the neurons will make a lot of errors but with time, they keep improving
+--> For this improvement to be done by the neurons, some mathematics and derivatives are used
+--> The motivation for this came from how a human brain works => consider the example of learning a bicycle => The same process of propagation goes on in our neurons
+--> The main thing about the neural network is that the neurons are naive about what subpart are they going to work on => there is a mathematics involved in that part using which each neuron is able to decide what subtask it needs to work on
+
+
+PyTorch v/s Tensorflow v/s Keras
+--> PyTorch and Tensorflow are the two frameworks for Deep learning
+--> There's another one called CNTK but that one is not used much
+--> Keras is a wrapper around Tensorflow, CNTK and theano which provides convinience (It has its backed by default as Tensorflow but it can be changed to others)
+--> In Tensorflow 2.0, keras is made a part of the library itself
+
+
+e.g. 
+
+Input Layer      Hidden Layer        Output Layer                   => Here every neuron will be connected with every neuron in the
+                                                                       hidden layer
+1) Age  -------> Awareness
+2) Education -->
+                                        Yes/No
+3) Income -----> Affordability
+4) Savings ---->
+
+
+
+Handwritten Digits Classification
+
+-->Input Neuron => Hidden Layer => Output Neuron (1-9 digits' probability or value between 0 to 1)
+--> But in this case, what would be the input features
+--> Get the 2D matrix of pixels (let's say 7x7) from the image where the values will range from 0 to 255 (0=black and 255=white)
+--> Convert the 2D array into 1D array to get 7*7=49 input features
+--> There won't be a hidden layer in this case but adding it improves the accuracy
