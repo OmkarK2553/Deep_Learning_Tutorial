@@ -50,3 +50,37 @@ Handwritten Digits Classification
 --> Get the 2D matrix of pixels (let's say 7x7) from the image where the values will range from 0 to 255 (0=black and 255=white)
 --> Convert the 2D array into 1D array to get 7*7=49 input features
 --> There won't be a hidden layer in this case but adding it improves the accuracy
+
+
+Importance of Activation Functions and its types
+--> Activation functions are required to make the process of Classification easy as it converts the output in the range 0 to 1
+--> It is hard to classify the output if it is a continuous variable hence it needs to be converted into a value between 0 to 1
+--> Hence activation function is helpful in the output layer
+--> Also in the case of hidden layers, the activation function is ised alongside the weighted sum of the linear equation
+--> If we have 5 hidden layers and we remove the activation function from all these layers, then we'd realise that we don't need activation function as all...The hidden layers won't affect the output
+--> Just the linear equations are not enough to solve a problem and activation function allows us to convert it in a non-linear form
+
+1) Step and Sigmoid Functions
+--> For the Classification, we can use step function i.e. if the value is >0.5, it is 1 else it is 0
+--> But the problem is that it is affected by the outliers
+--> Another problem is that it gives values as only 0 and 1 and nothing in between them
+--> Suppose, we need to classify handwritten digits and the value for 2 digits comes out to be >0.5 and hence they will be treated as 1
+--> So it is impossible to decide which one is the correct handwritten digit
+--> That's why sigmoid function is used which gives us the smooth curve and hence the maximum value can be used to get the output
+
+2) tanh Function
+--> It is similar to sigmoid function but it gives an output value between -1 to 1
+
+--> The general guideline is that always use sigmoid in the output layer and in all other places, try to use tanh
+--> Because tanh will try to center your data
+
+--> Derivative tells the slope i.e. how much the output changes for a given input change
+--> But it creates a problem in the learning process as its value is 0 for +ve and -ve higher values => if your derivates are closer to 0, the learning becomes extremely slow (Vanishing Gradient Problem) => the logic is that in gradient descent, we calculate the derivative and then backpropagate the arrow
+
+--> To overcome this problem, a new function exists known as ReLU
+--> If you value is less than 0 then output is 0, else the output is same as that value (45 degree line)
+--> output = max(0,x)
+--> The guideline is that for hidden layers, if you're not sure which activation function to use, just use relu as a default choice
+--> ReLU is a lightweight function and computationally very effective
+--> ReLU also has the Vanishing Gradient Problem as for value<0, derivative is 0
+--> For that there is a variation of ReLU called Leaky ReLU in which the output = max(0.1x,x)
