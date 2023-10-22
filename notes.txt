@@ -84,3 +84,16 @@ Importance of Activation Functions and its types
 --> ReLU is a lightweight function and computationally very effective
 --> ReLU also has the Vanishing Gradient Problem as for value<0, derivative is 0
 --> For that there is a variation of ReLU called Leaky ReLU in which the output = max(0.1x,x)
+
+
+
+Derivatives for Algorithms
+--> Algorithms like Gradient Descent and Backward Propagation require the understanding of derivatives and partial derivatives
+--> Derivative is the slope of the line
+--> In case of a linear line, it is easy to calculate but in case of a non-linear line, it is difficult to calculate the slope
+--> Hence we zoom into the line and we can see an almost straight line => slope can be calculated and it doesn't come out to be a constant but a function of x
+--> For partial derivates, if we need to find the derivative wrt x, we consider y as a constant
+--> In case of Deep Learning, suppose we have bedrooms and area as our features and we need to predict the price => del(Price)/del(bedrooms) tells us "How much a price is changing given a change in bedrooms"
+--> In neural networks, the initial weights are considered to be 1 and based on trial and error the weights are adjusted to improve the accuracy => NEURAL NETWRORK TRAINING IS ALL ABOUT ADJUSTING WEIGHTS
+--> To get the weights properly adjusted and not get caught into an infinite loop, derivates are used
+--> Suppose => we take the derivative of error wrt to Age (How much an error/output changes based on the change in age) => It is represented by the concept of partial derivative wrt all the features in the problem
