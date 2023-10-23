@@ -5,7 +5,7 @@ What is a Neuron?
 
 
 What is a Neural Network?
---> Each neuron is given a specific subtaskof the whole task (e.g. if we need to identify if the given image is of a koala or not, each neoron will work on a specific part of the koala's body such as ears, nose, eyes, legs, etc) and these parts will gave their own weightage in the identification
+--> Each neuron is given a specific subtask of the whole task (e.g. if we need to identify if the given image is of a koala or not, each neoron will work on a specific part of the koala's body such as ears, nose, eyes, legs, etc) and these parts will gave their own weightage in the identification
 --> These neurons form groups. A group tells its results to the next group and so on
 --> there might be 3 groups at level 1, 2 groups at level 2 and then 1 group at level 3
 --> Intermediate groups are known as the hidden layer
@@ -97,3 +97,9 @@ Derivatives for Algorithms
 --> In neural networks, the initial weights are considered to be 1 and based on trial and error the weights are adjusted to improve the accuracy => NEURAL NETWRORK TRAINING IS ALL ABOUT ADJUSTING WEIGHTS
 --> To get the weights properly adjusted and not get caught into an infinite loop, derivates are used
 --> Suppose => we take the derivative of error wrt to Age (How much an error/output changes based on the change in age) => It is represented by the concept of partial derivative wrt all the features in the problem
+
+
+
+Matrix Operations in Deep Learning
+--> Various operations such as matrix multiplication, dot product, etc are used in Deep Learning
+--> Numpy can be used to aid these operations which is a special library for matrix manipulations
