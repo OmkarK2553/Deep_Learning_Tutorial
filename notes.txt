@@ -1,11 +1,11 @@
 What is a Neuron?
---> A neuron is a combination if linear and logistic regression i.e. its first part is a linear eqn (weighted sum) and its second part is a sigmoid function which is also called as an activation function
+--> A neuron is a combination of linear and logistic regression i.e. its first part is a linear eqn (weighted sum) and its second part is a sigmoid function which is also called as an activation function
 --> Here the logic is that, we have an input and linear eqn will give a continuous value and that continuous value is converted to 0/1 using activation or sigmoid function
 --> If the value is 1, we say that the neuron is activated else we say that it is deactivated
 
 
 What is a Neural Network?
---> Each neuron is given a specific subtask of the whole task (e.g. if we need to identify if the given image is of a koala or not, each neoron will work on a specific part of the koala's body such as ears, nose, eyes, legs, etc) and these parts will gave their own weightage in the identification
+--> Each neuron is given a specific subtask of the whole task (e.g. if we need to identify if the given image is of a koala or not, each neuron will work on a specific part of the koala's body such as ears, nose, eyes, legs, etc) and these parts will gave their own weightage in the identification
 --> These neurons form groups. A group tells its results to the next group and so on
 --> there might be 3 groups at level 1, 2 groups at level 2 and then 1 group at level 3
 --> Intermediate groups are known as the hidden layer
@@ -103,3 +103,27 @@ Derivatives for Algorithms
 Matrix Operations in Deep Learning
 --> Various operations such as matrix multiplication, dot product, etc are used in Deep Learning
 --> Numpy can be used to aid these operations which is a special library for matrix manipulations
+
+
+
+Loss Functions or Cost functions
+--> Loss functions are used in neural network training
+--> 5 loss functions can be used
+
+e.g. Cards => K,9,7     Predicted => 8,Q,6
+1) Mean Absolute Error => (K-8)+(Q-9)+(7-6) = 5+3+1 = 9/3 = 3       => /3 for mean
+2) Mean Sqaured Error => (K-8)^2+(Q-9)^2+(7-6)^2 = 25+9+1 = 35/3    => /3 for mean
+   --> Having Sqaured error in ML gives you some utility => It allows to converge your Gradient Descent in a better way
+
+Why Loss functions =>
+--> e.g. Based on age and Affordability, we are predicting if a person will buy insurance or not
+--> age, aff = x and buy = y => y = f(x) = w1x1 + w2x2
+--> We randomly assign values to w1 and w2 for training and we find the outcome
+--> Let's say y'=0.99 but y=0 => Absolute error = 0.99.... Also if y'=0.99 and y=1 => Absolute error = 0.01
+--> Then take the avg of all the errors of the samples => Mean Absolute error
+--> Mean Absolute error = cost function and each individual error = Loss
+--> Here, for 13 samples, we get MAE = 10.02
+--> Once we go through 'one round' of all the training samples => it is called as 1 epoch
+
+3) log loss or binary crossentropy = -1/n sum(yi*log(y'i)+(1-yi)*log(1-yi))
+--> Practically, for logistic regression, we use log loss => why? => https://towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c
