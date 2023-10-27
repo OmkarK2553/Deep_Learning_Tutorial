@@ -118,7 +118,7 @@ e.g. Cards => K,9,7     Predicted => 8,Q,6
 Why Loss functions =>
 --> e.g. Based on age and Affordability, we are predicting if a person will buy insurance or not
 --> age, aff = x and buy = y => y = f(x) = w1x1 + w2x2
---> We randomly assign values to w1 and w2 for training and we find the outcome
+--> We randomly assign values to w1 and w2 for training and we find the outcome => passing the values is called a forward pass
 --> Let's say y'=0.99 but y=0 => Absolute error = 0.99.... Also if y'=0.99 and y=1 => Absolute error = 0.01
 --> Then take the avg of all the errors of the samples => Mean Absolute error
 --> Mean Absolute error = cost function and each individual error = Loss
@@ -127,3 +127,33 @@ Why Loss functions =>
 
 3) log loss or binary crossentropy = -1/n sum(yi*log(y'i)+(1-yi)*log(1-yi))
 --> Practically, for logistic regression, we use log loss => why? => https://towardsdatascience.com/why-not-mse-as-a-loss-function-for-logistic-regression-589816b5e03c
+
+
+
+Gradient Descent
+--> It is used to find the linear equation given the values of two variables => It finds the relationship between two or more variables => also called prediction function
+--> y = mx+c => m = weight, c = bias
+--> Gradient Descent is used during the training of a neural network
+--> Same e.g. as above => predict if the person will buy insurance or not based on age and Affordability for 13 samples
+--> You randomly assign the weights(1) and bias(0) initially and do the forward passing for the 1st samples
+--> You get the outcome and calculate the error => let's say you calculate the log loss (for logistic)
+--> After calculating the errors for all 13 samples, you get the total error and find out the final log loss or binary cross entropy
+--> This process is called one epoch
+--> Now, your goal is to backpropagate this loss such that the weights will be adjusted => the main goal is to adjust these weights such that the log loss will be reduced
+--> Now, w1 = w1-something
+--> Derivative of your loss wrt w1 indicates how much the log loss changes for a given change in w1
+--> w1 = w1 - (learning rate)*d/dw1 => learning weight is a small value (generally 0.1) so that you don't adjust your weight drastically
+--> same for w2 and b (bias)
+--> Now, d/dw1 = 1/n sum(xi(y'i-yi))
+--> For bias,  d/db = 1/n sum(y'i-yi)
+--> After calculating these values, we get w1 = 0.8, w2 = 0.7 and b = 0.2
+--> You again repeat the same process => from forwrd passing to getting the log loss
+--> By the way, here we are using batch gradient => you need to feed the entire dataset for one epoch (other two types are stochastic and mini-batch gradient)
+--> Now, we keep on getting different values of errors and try to minimize it in each epoch...But when should be stop?
+--> If your loss function is a convex function (y-axis=loss, x-axis=w1, z-axis=b) => gradient like graph but 3d
+--> You start with a random value and your loss is high
+--> By calculating the derivative, you are constantly moving towards the minimum
+--> Once you are at the minimum point of loss, you get the values for weights and bias => once you find these values, you have your prediction function
+--> Gradient descent allows you to do the same
+--> You constantly move from a higher point to a global minima and while moving, you draw a tangent at every point and that is the derivative at that point => you multiply that derivative with the learning rate and move towards the global minima
+
