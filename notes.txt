@@ -157,3 +157,10 @@ Gradient Descent
 --> Gradient descent allows you to do the same
 --> You constantly move from a higher point to a global minima and while moving, you draw a tangent at every point and that is the derivative at that point => you multiply that derivative with the learning rate and move towards the global minima
 
+
+
+Flow of Neural Networks:
+--> Firstly, there are two functions which we need to call/perform, fit and predict
+--> When we call the fit function, the call goes to gradient descent to find weights and bias => Hence, model is trained
+--> After training, we call the predict function
+--> In predict function, we get the weighted sum by w1*X_test['age']+w2*X_test['affordability']+bias and use sigmoid_numpy() to get the final output
