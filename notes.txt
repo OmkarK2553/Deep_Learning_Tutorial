@@ -164,3 +164,17 @@ Flow of Neural Networks:
 --> When we call the fit function, the call goes to gradient descent to find weights and bias => Hence, model is trained
 --> After training, we call the predict function
 --> In predict function, we get the weighted sum by w1*X_test['age']+w2*X_test['affordability']+bias and use sigmoid_numpy() to get the final output
+
+
+
+Stochastic, Batch and Mini-Batch Gradient Descent
+--> We initially assign some random values to weights and bias and keep on doing Forward passing for each row, get the error and finally get the cumulative error when all the samples have been passed 
+--> After getting the cumulative error, we backpropagate and adjust the weights ====> one epoch
+--> This is known as Batch Gradient Descent
+--> But what if we have 10 million samples? Let's say we have 2 features => 20 million derivatives need to be calculated in each epoch
+--> We pick a sample randomly, do the forward passing, get the error, adjust the weights, again pick another random sample, and follow the same process
+--> This method is known as stochastic gradient descent
+--> The convergence or the graph between cost and epoch is much smoother for Batch gradient descent while it is somewhat a zigzag line for Stochastic gradient descent
+--> Mini Batch Gradient Descent is similar to Stochastic one, just instead of choosing one randomly picked training sample, we will use a batch of randomly picked training samples
+--> In Stochastic, we cannot use vector mathematics of numpy which has a huge importance in machine learning
+--> Also the process will be quite slow for large number of samples as we need to backpropagate and adjust weights for each sample
