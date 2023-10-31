@@ -178,3 +178,15 @@ Stochastic, Batch and Mini-Batch Gradient Descent
 --> Mini Batch Gradient Descent is similar to Stochastic one, just instead of choosing one randomly picked training sample, we will use a batch of randomly picked training samples
 --> In Stochastic, we cannot use vector mathematics of numpy which has a huge importance in machine learning
 --> Also the process will be quite slow for large number of samples as we need to backpropagate and adjust weights for each sample
+
+
+
+Chain Rule
+--> Simplified architecture of neural network => input with weights => weighted sum => y^ => y-y^ (e) => e^2 (loss)
+--> We're getting the partial derivative of loss wrt e => 2e 
+--> And also the partial derivative of error wrt y^ => -1
+--> Also the partial derivative of y^ wrt w1 => area (w2 and other parameters would be constant)
+--> So now, what is the partial derivative of loss wrt w1? => for a given change in w1, how much will loss change?
+--> We want to get the optimal values of w1 and w2 and partial derivative helps us in it
+--> Hence, the answer will be multiplication of all above derivatives ==> Chain Rule
+--> Image
