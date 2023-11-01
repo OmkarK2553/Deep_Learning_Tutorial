@@ -190,3 +190,18 @@ Chain Rule
 --> We want to get the optimal values of w1 and w2 and partial derivative helps us in it
 --> Hence, the answer will be multiplication of all above derivatives ==> Chain Rule
 --> Image
+
+
+Tensorboard
+--> It is a tool to visualize and debug Neural Networks
+--> We need to add a callback in model.fit() function and it will store everthing in the specified log directory
+--> tensorboard --logdir logs/ => python -m tensorboard.main --logdir=[PATH_TO_LOGDIR] =>cmd is used to run it on localhost => Scalar section
+--> Or you can launch it in jupyter notebook using =>
+      %load_ext tensorboard
+      %tensorboard --logdir logs/fit
+--> You can also see the neuron details with layers and structure in the graph section
+--> Histogram section shows distribution of weights and bias for each epoch
+--> You can use different directory paths for different hyperparameters to compare them with each other
+--> weights and bias = parameters
+--> the parameters which you provide to fit/compile or such functions are called hyperparameters
+--> hyperparameters control parameters
